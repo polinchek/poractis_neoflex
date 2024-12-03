@@ -91,7 +91,43 @@ class _MyStatelessWidgetState extends State<MyStatelessWidget> {
 
 ![image](https://github.com/user-attachments/assets/24ef2679-8232-4f87-acec-65db83f8e617)
 
+class ScreenA extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Screen A')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/screenB');
+          },
+          child: Text('Go to Screen B'),
+        ),
+      ),
+    );
+  }
+}
 
+class ScreenB extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Screen B')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Back to Screen A'),
+        ),
+
+Экран А
+
+![image](https://github.com/user-attachments/assets/10048c63-4303-486b-b3be-0dc33c9b2f4b)
+
+Переход на экран В
+
+![image](https://github.com/user-attachments/assets/a0596f5c-3b70-4304-a5a7-0f659b1488d3)
 
   
 
