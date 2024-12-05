@@ -20,7 +20,7 @@
 
 ![image](https://github.com/user-attachments/assets/47ca3c97-5a6f-4a44-aa77-d4141becfbca)
 
-      body: MyStatelessWidget(color: const Color.fromARGB(255, 211, 158, 235)),
+ body: MyStatelessWidget(color: const Color.fromARGB(255, 211, 158, 235)),
       floatingActionButton:
           IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
     ),
@@ -128,6 +128,160 @@ class ScreenB extends StatelessWidget {
 Переход на экран В
 
 ![image](https://github.com/user-attachments/assets/a0596f5c-3b70-4304-a5a7-0f659b1488d3)
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Color Swapper'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: <Widget>[
+                  SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: ColoredBox(color: _color1),
+                  ),
+                  const SizedBox(width: 20), 
+                  SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: ColoredBox(color: _color2),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _swapColors,
+                child: const Text('Swap Colors')
+                
+![image](https://github.com/user-attachments/assets/fdf7b8a5-3a7d-4d75-b1a8-af3ad076698d)
+
+primarySwatch: Colors.deepPurple, // Set a primary color for the app
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Colorful Widget Showcase')),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Row with Expanded widgets and text
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      color: Colors.tealAccent,
+                      padding: const EdgeInsets.all(16.0),
+                      child: const Center(
+                          child: Text('Expanded Widget 1',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold))),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.lightBlueAccent,
+                      padding: const EdgeInsets.all(16.0),
+                      child: const Center(
+                          child: Text('Expanded Widget 2',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold))),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              
+ Container(
+                color: Colors.amberAccent,
+                padding: const EdgeInsets.all(10.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: const Text('Aligned Text',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+                ),
+              ),
+              const SizedBox(height: 20),
+
+   Center(
+                child: Container(
+                  width: 150,
+                  height: 100,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.pink, Colors.purple],
+                    ),
+                  ),
+                  child: const Center(
+                      child: Text('Centered Container',
+                          style: TextStyle(fontSize: 16, color: Colors.white))),
+                ),
+              ),
+              const SizedBox(height: 20),
+
+Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrange,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Text('Stacked Text',
+                      style: TextStyle(fontSize: 20, color: Colors.white)),
+                ],
+              ),
+              const SizedBox(height: 20),
+
+ Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text('List of Items',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                  ),
+                  SizedBox(
+                    height: 200,
+                    child: ListView.builder(
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          leading: CircleAvatar(
+                              backgroundColor: Colors
+                                  .primaries[index % Colors.primaries.length]),
+                          title: Text('Item ${index + 1}')
+
+![image](https://github.com/user-attachments/assets/d5a08f6e-f659-4525-a86a-68643759b5eb)
+
+Передача данных с onGenerateRoute.
+
+![image](https://github.com/user-attachments/assets/c77a74b7-ab70-4f12-a01c-b7790c292e77)
+
+![image](https://github.com/user-attachments/assets/511930f8-f7e8-4d41-85e7-beebed02e58b)
+
+
+
 
   
 
