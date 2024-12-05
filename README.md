@@ -280,6 +280,22 @@ Stack(
 
 ![image](https://github.com/user-attachments/assets/511930f8-f7e8-4d41-85e7-beebed02e58b)
 
+ TextField(
+              decoration: InputDecoration(
+                labelText: 'TextField',
+                hintText: 'Enter text here',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'TextForm',
+                hintText: 'Enter text ',
+                border: OutlineInputBorder(),
+              )
+
+![image](https://github.com/user-attachments/assets/65bdee15-f6ab-464e-81b8-647fad13b3dd)
 
 
 
