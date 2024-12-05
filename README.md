@@ -297,8 +297,136 @@ Stack(
 
 ![image](https://github.com/user-attachments/assets/65bdee15-f6ab-464e-81b8-647fad13b3dd)
 
+ @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("setState Example")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Counter:', style: TextStyle(fontSize: 20)),
+            Text('$_counter', style: TextStyle(fontSize: 40)),
+            ElevatedButton(
+              onPressed: _incrementCounter,
+              child: Text("+1"),
+            ),
 
 
-  
+![image](https://github.com/user-attachments/assets/8346f657-dfbb-47d7-9def-49438fe464a4)
+
+![image](https://github.com/user-attachments/assets/4326dbb5-6b03-4e50-9973-7fd4ba4bab6a)
+
+
+  @override
+  Stream<CounterState> mapEventToState(CounterEvent event) async* {
+    if (event is IncrementCounter) {
+      yield CounterChanged(counterValue: state.counterValue + 1);
+    } else if (event is DecrementCounter) {
+    yield CounterChanged(counterValue: state.counterValue - 1);
+    }
+
+    
+class IncrementCounter extends CounterEvent {} 
+
+class DecrementCounter extends CounterEvent {}  
+abstract class CounterState {
+  final int counterValue;
+  CounterState({required this.counterValue});
+}
+
+class CounterInitial extends CounterState {
+  CounterInitial({required int counterValue})
+      : super(counterValue: counterValue);
+}
+
+class CounterChanged extends CounterState {
+  CounterChanged({required int counterValue})
+      : super(counterValue: counterValue);
+}
+
+  ![image](https://github.com/user-attachments/assets/4268117b-d741-4026-b83b-5c71a9a8bcee)
+
+    @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Shared Preferences Demo'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Counter value: ${_counter ?? 'No data'}',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            Text(
+              'Last action: $_action',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _saveData,
+              child: Text('Increment Counter'),
+            ),
+            ElevatedButton(
+              onPressed: _clearData,
+              child: Text('Clear Data'),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            ),
+
+   ![image](https://github.com/user-attachments/assets/92005394-7f98-4dde-ba7b-c89374759aa1)
+
+![image](https://github.com/user-attachments/assets/ef6be8f1-483c-45ff-9c5f-40fab36c8d37)
+
+   class CounterRepository {
+  static const _counterKey = 'counter';
+
+  Future<int> getCounter() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(_counterKey) ?? 0;
+  }
+
+  Future<void> setCounter(int value) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setInt(_counterKey, value);
+
+    class CounterUseCase {
+ final CounterRepository repository;
+
+ CounterUseCase(this.repository);
+
+ Future<int> getCounter() {
+   return repository.getCounter();
+ }
+
+ Future<void> incrementCounter() async {
+   final currentValue = await repository.getCounter();
+   await repository.setCounter(currentValue + 1);
+ }
+
+ Future<void> decrementCounter() async {
+   final currentValue = await repository.getCounter();
+   await repository.setCounter(currentValue - 1);
+
+   Future<void> _loadCounter() async {
+    final counterValue = await _counterUseCase.getCounter();
+    setState(() {
+      _counter = counterValue;
+    });
+  }
+
+  // Увеличение счетчика
+  Future<void> _increment() async {
+    await _counterUseCase.incrementCounter();
+    _loadCounter(); // Обновление UI
+  }
+
+![image](https://github.com/user-attachments/assets/c8b40080-e952-4da2-b02b-0ab9dcb5c9f6)
+
+ 
+
+
 
         
